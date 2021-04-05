@@ -1,4 +1,4 @@
-package future_demo;
+package executor_demo;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
