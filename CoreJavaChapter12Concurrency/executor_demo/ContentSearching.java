@@ -15,18 +15,26 @@ public class ContentSearching {
             String keyword = in.nextLine();
             Set<File> filesToSearch = listFileName(dir);
             System.out.println("The number of files to search: " + filesToSearch.size());
-            var tasks = new ArrayList<Callable<Long>>(4);
+            var tasks = new ArrayList<Callable<Long>>(filesToSearch.size());
             for(File file: filesToSearch)
             {
                 Callable<Long> task = () -> occurrence(file, keyword);
                 tasks.add(task);
             }
-            ExecutorService executorService = Executors.newCachedThreadPool();
+            ExecutorService executorService = Executors.newFixedThreadPool(2);
             List<Future<Long>> results = executorService.invokeAll(tasks);
             long total = 0;
             for(Future<Long> result: results)
                 total += result.get();
             System.out.println("total occurences: " + total);
+            executorService.submit(new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println("hello");
+                }
+            });
+
+
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }

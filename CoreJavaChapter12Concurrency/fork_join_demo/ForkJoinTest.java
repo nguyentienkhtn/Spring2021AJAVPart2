@@ -6,7 +6,7 @@ import java.util.function.DoublePredicate;
 
 public class ForkJoinTest {
     public static void main(String[] args) {
-        final int SIZE = 1000000;
+        final int SIZE = 1_000_000;
         var numbers = new double[SIZE];
         for(int i = 0; i < SIZE; i++)
             numbers[i] = Math.random();
