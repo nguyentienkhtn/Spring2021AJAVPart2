@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+
 <Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SearchController">
    <children>
       <Button fx:id="lb" layoutX="229.0" layoutY="259.0" mnemonicParsing="false" onAction="#searchButtonAction" text="Button" />
@@ -15,5 +16,10 @@
       </Label>
       <TextField fx:id="dirInput" layoutX="200.0" layoutY="52.0" />
       <TextField fx:id="keywordInput" layoutX="200.0" layoutY="112.0" />
+      <Label layoutX="121.0" layoutY="48.0" prefHeight="17.0" prefWidth="66.0" text="File">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
