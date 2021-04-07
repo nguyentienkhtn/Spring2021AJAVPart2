@@ -8,8 +8,8 @@
 
 <Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SearchController">
    <children>
-      <Button fx:id="lb" layoutX="229.0" layoutY="259.0" mnemonicParsing="false" onAction="#searchButtonAction" text="Button" />
-      <Label layoutX="214.0" layoutY="182.0" prefHeight="36.0" prefWidth="121.0" text="Label">
+      <Button fx:id="button" layoutX="229.0" layoutY="259.0" mnemonicParsing="false" onAction="#searchButtonAction" text="Button" />
+      <Label fx:id="lb" layoutX="214.0" layoutY="182.0" prefHeight="36.0" prefWidth="121.0" text="Label">
          <font>
             <Font size="28.0" />
          </font>

@@ -2,6 +2,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
@@ -14,7 +15,9 @@ public class SearchController {
     private Pane root;
 
     @FXML
-    private Button lb;
+    private Label lb;
+    @FXML
+    private Button button;
 
     @FXML
     private TextField dirInput;
@@ -27,6 +30,7 @@ public class SearchController {
         lb.setText("Searching");
         Runnable task = () -> {
           try {
+              button.setDisable(true);
               Thread.sleep(20);
               Platform.runLater(() ->{
                   try {
@@ -37,6 +41,7 @@ public class SearchController {
                           if(line.contains(keywordInput.getText()))
                               lb.setText("Found!!!!");
                       }
+                      button.setDisable(false);
                   } catch (Exception e) {
                       e.printStackTrace();
                   }
