@@ -23,7 +23,7 @@ public class ThreadEchoHandler implements Runnable {
                 while(!done && sc.hasNext())
                 {
                     String mes = sc.nextLine();
-                    outPrint.println(mes);
+                    outPrint.println("Cua thay ne: " + mes);
                     if(mes.trim().equals("BYE"))
                         done = true;
                 }
