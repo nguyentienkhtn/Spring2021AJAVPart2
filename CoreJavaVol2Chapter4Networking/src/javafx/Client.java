@@ -11,7 +11,7 @@ public class Client {
             socket.connect(new InetSocketAddress(InetAddress.getLocalHost(),8189),1500);
             OutputStream outputStream = socket.getOutputStream();
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
-            objectOutputStream.writeObject(new Coordinate(15, 150));
+            objectOutputStream.writeObject(new Coordinate(150, 150));
             objectOutputStream.flush();
             objectOutputStream.close();
 
