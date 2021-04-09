@@ -9,6 +9,10 @@ public class ControlThroughSocketController {
     @FXML
     private Pane root;
 
+    public Circle getCircle() {
+        return circle;
+    }
+
     @FXML
     private Circle circle;
 
