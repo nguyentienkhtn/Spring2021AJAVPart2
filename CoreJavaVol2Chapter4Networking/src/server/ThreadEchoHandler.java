@@ -24,8 +24,10 @@ public class ThreadEchoHandler implements Runnable {
                 {
                     String mes = sc.nextLine();
                     outPrint.println("Cua thay ne: " + mes);
-                    if(mes.trim().equals("BYE"))
+                    if(mes.trim().equals("BYE")) {
                         done = true;
+                        Thread.currentThread().interrupt();
+                    }
                 }
             }
         } catch (IOException e) {

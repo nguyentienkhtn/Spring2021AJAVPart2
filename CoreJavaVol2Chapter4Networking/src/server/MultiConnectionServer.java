@@ -14,7 +14,15 @@ public class MultiConnectionServer {
                 connectionCount ++;
                 System.out.println("Connection count: " + connectionCount);
                 Runnable conn = new ThreadEchoHandler(incoming);
-                new Thread(conn).start();
+                try {
+                    new Thread(conn).start();
+                }
+                catch (Exception e){
+                    incoming.close();
+                    System.out.println("closing socket");
+                    break;
+                }
+
 
             }
 
